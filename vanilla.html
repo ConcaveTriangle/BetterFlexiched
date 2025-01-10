@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <title>FlexiSCHED V13</title>
+                    <link rel="stylesheet" href="https://gunn.flexisched.net/build/8954.b81a85e3.css"><link rel="stylesheet" href="https://gunn.flexisched.net/build/4028.e8944fea.css">
+        
+                        <script src="https://gunn.flexisched.net/build/runtime.9a765b3c.js" defer></script><script src="https://gunn.flexisched.net/build/7136.5bdf7678.js" defer></script><script src="https://gunn.flexisched.net/build/4692.e0ed4a3b.js" defer></script><script src="https://gunn.flexisched.net/build/8014.2fd036c7.js" defer></script><script src="https://gunn.flexisched.net/build/8747.a83bfeb7.js" defer></script><script src="https://gunn.flexisched.net/build/1649.5a16352c.js" defer></script><script src="https://gunn.flexisched.net/build/4832.25d44aae.js" defer></script><script src="https://gunn.flexisched.net/build/8954.39de6871.js" defer></script><script src="https://gunn.flexisched.net/build/4028.a257837b.js" defer></script><script src="https://gunn.flexisched.net/build/app.9d8fb23a.js" defer></script>
+
+			<script>
+				window.onload = function alertAutoClose(){
+					setTimeout(function(){
+						$(".message").hide(); 
+					}, 4000);
+				}
+
+								// check for inactivity
+				var lastAction = 1736544122;
+				var timeout = setInterval(sessionTimeout, 60000);
+				function sessionTimeout() {
+					var d = new Date();
+					var time = d.getTime() / 1000;
+					var remaining = Math.floor((3600 - (time - lastAction)) / 60);
+					if (remaining <= 0) {
+						window.location.href = "/logout?error=9"
+					} else if (remaining <= 1) {
+						if (confirm("Your session will expire in 1 minute or less. Would you like to continue?")) {
+							location.reload();
+						} else {
+							window.location.href = "/logout?error=9";
+						}
+					}
+				}
+				
+							</script>
+        
+                        <script src="https://gunn.flexisched.net/build/9741.af2b51b3.js" defer></script><script src="https://gunn.flexisched.net/build/2969.d9af64e1.js" defer></script><script src="https://gunn.flexisched.net/build/6897.289f2d9a.js" defer></script><script src="https://gunn.flexisched.net/build/4536.2e53daf4.js" defer></script><script src="https://gunn.flexisched.net/build/218.cbfe54a2.js" defer></script><script src="https://gunn.flexisched.net/build/my_schedule.ffc0c4e8.js" defer></script>
+                </head>
+    <body>
+		<!-- Header -->
+		<header class="bg-primary container-fluid shadow">
+			<nav class="navbar navbar-fixed-top">
+							<a class="navbar-brand" href="https://gunn.flexisched.net/dashboard">
+					<img src="https://gunn.flexisched.net/img/FullSCHED_clock_notag_WHITE.png" alt="FlexiSCHED logo" style="max-height: 50px;">
+				</a>
+							<button id="showMain" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-label="Toggle navigation"><span style="color:white;font-style:bold" class="servicedrop fa fa-angle-down"></span></button>
+				<div class="ml-auto">
+					<ul class="nav align-items-center">
+																								
+												<div id="activeOfficeReferral"></div>
+						<div id="activeWatchListPasses"></div>
+					
+						<div class="nav-item text-white px-3">
+							<h5 class="m-0">1/10/2025</h5>
+						</div>
+
+						
+												<div class="nav-item dropdown px-3">
+							<a data-bs-toggle="dropdown" style="color: white; cursor: pointer;" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="fa fa-info-circle fa-lg" aria-hidden="true"></span><span class="tag tag-success"></span>
+							</a>
+							<div class="dropdown-menu p-0" style="right: 0; left: auto;">
+								<a class="dropdown-item" href="https://gunn.flexisched.nethttps://docs.google.com/document/d/1q1fGntHsuuA5rmhhpswULCXc7jh3tGIJFJV2GU_19ak" target="_blank" ><i class="fa fa-ticket" aria-hidden="true"></i> FlexiSCHED Knowledge Base</a>
+																							</div>
+						</div>
+						
+												<div class="nav-item dropdown px-3">
+							<a data-bs-toggle="dropdown" style="color: white; cursor: pointer;" role="button" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-user fa-lg" aria-hidden="true"></i>
+							</a>
+							<div class="dropdown-menu p-0" style="right: 0; left: auto;">
+								<a class="dropdown-item" href="https://gunn.flexisched.net/my/profile"><i class="fa fa-user" aria-hidden="true"></i> My Profile</a>
+								<a class="dropdown-item" href="https://gunn.flexisched.net/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+															</div>
+						</div>
+											</ul>
+				</div>
+			</nav>
+							<div class="navbar-default col-12 collapse" id="mainMenu" name="mainMenu">
+					<ul class="nav nav-fill">
+						
+																					<li class="nav-item flex flex-col">
+									<a class="nav-link" style="color:white" href="https://gunn.flexisched.net/dashboard"><i class="fa fa-dashboard fa-white" aria-hidden="true"></i> Dashboard</a>
+								</li>
+
+								<li class="nav-item flex flex-col">
+									<a class="nav-link" style="color:white" href="https://gunn.flexisched.net/click-to-schedule"><i class="fa fa-calendar-check fa-white" aria-hidden="true"></i> FLEX Schedule</a>
+								</li>
+
+								<li class="nav-item flex flex-col">
+									<a class="nav-link" style="color:white" href="https://gunn.flexisched.net/my/schedule"><i class="fa fa-calendar-days fa-white" aria-hidden="true"></i> My Schedule</a>
+								</li>
+
+								<li class="nav-item flex flex-col">
+									<a class="nav-link" style="color:white" href="https://gunn.flexisched.net/my/attendance"><i class="fa fa-clipboard-check fa-white" aria-hidden="true"></i> My Attendance</a>
+								</li>
+
+								<li class="nav-item flex flex-col">
+									<a class="nav-link" style="color:white" href="https://gunn.flexisched.net/my/groups"><i class="fa fa-user-group fa-white" aria-hidden="true"></i> My Groups</a>
+								</li>
+
+																											
+						
+						
+						
+						
+											</ul>
+				</div>
+					</header>
+		<!-- End Header -->
+
+		<!-- Content -->
+        
+<!-- Page Container -->
+<div class="container-fluid h-100 p-3" id="list-container">
+                        
+            
+    <!-- Page Header -->
+    <div class="row d-flex flex-row m-0">
+        <!-- Navigational Breadcrumb -->
+        <div class="col-12 col-md-3 align-self-end"></div>
+        <!-- End Navigation Breadcrumb -->
+
+        <!-- Page Title -->
+        <div class="col-12 col-md-6 align-self-end">
+            <h1 class="text-center m-0">
+                My Schedule
+            </h1>
+                    </div>
+        <!-- End Page Title -->
+
+        <!-- Toolbox & Actions -->
+        <div class="col-12 col-md-3 align-self-end"></div>
+        <!-- End Toolbox & Actions -->
+    </div>
+    <hr class="my-3">
+    <!-- End Page Header -->
+
+    
+    
+        
+        <!-- Closed Scheduling Window -->
+    <div class="alert alert-primary text-center">
+                    Your student scheduling window is currently closed!
+                            <br>Your next scheduling window opens: Wednesday at 3:30 pm
+            </div>
+    <hr class="my-3">
+    <!-- End Closed Scheduling Window -->
+    
+    
+    
+    
+    
+            <input type="hidden" aria-hidden="true" value="2" id="numOfDays">
+        <input type="hidden" aria-hidden="true" value="1" id="numOfPeriods">
+        <input type="hidden" aria-hidden="true" value="1" id="planning">
+        <input type="hidden" aria-hidden="true" value="0" id="flexiPass">
+        <input type="hidden" aria-hidden="true" value="0" id="hideStudentId">
+        <input type="hidden" aria-hidden="true" value="Student" id="session_type">
+        <input type="hidden" aria-hidden="true" value="1" id="numOfFlexPeriods">
+        <input type="hidden" aria-hidden="true" value="1" id="numOfCycles">
+        <input hidden id="hidden-type" value="Student"></input>
+    
+    
+    
+    
+    
+    
+    <!-- Table Section -->
+    <section id="table-container">
+        
+        
+        <!-- List -->
+        <div class="row d-flex flex-row m-0" id="list-container">
+            <table class="table table-striped table-hover table-bordered text-center w-100 shadow" id="my_schedule">
+                <thead>
+                                                                    <th>Period Num</th>
+                                                                                            <th>Period</th>
+                                                                                            <th>PRIME<br>1/15/2025</th>
+                                                                                            <th>Study Hall<br>1/10/2025</th>
+                                                                                            <th>Actions</th>
+                                                            </thead> 
+
+                <tbody>
+                                    </tbody>
+
+                            </table>
+        </div>
+        <!-- End List -->
+    </section>
+    <!-- End Table Section -->
+</div>
+<!-- End Page Container -->
+
+
+
+
+		<!-- End Content -->
+
+		<!-- Error Status Modal -->
+		<div id="error-status-modal-div"></div>
+		<!-- End Error Status Modal -->
+
+		<!-- Success Status Modal -->
+		<div id="success-status-modal-div"></div>
+		<!-- End Success Status Modal -->
+
+		<!-- Status Modal -->
+		<div id="status-status-modal-div"></div>
+		<!-- End Success Status Modal -->
+
+		<!-- Service Agreement Modal -->
+		<div id="service_agreement-modal-div"></div>
+		<!-- End Service Agreement Modal -->
+
+		<!-- Refresh Status Modal -->
+		<div id="refresh-status-modal-div">
+			<div class="modal fade" tabindex="-1" role="dialog" id="refreshStatusModal" data-bs-backdrop="static" aria-labelledby="refreshStatusModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title primary-modal-title" id="refreshStatusModalLabel"><!-- populates via function call --></h5>
+							<button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+						</div>
+
+						<div class="modal-body" id="refreshStatusModalBody">
+							<!-- populates via function call -->
+						</div>
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span class="fa fa-times" aria-hidden="true"></span> OK</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Refresh Status Modal -->
+    </body>
+</html>
